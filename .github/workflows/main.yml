@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup .NET
-      uses: shaanmugpriya/setup-dotnet@Feature/497
+      uses: shaanmugapriya/setup-dotnet@Feature/497
       with:
         dotnet-version: latest
