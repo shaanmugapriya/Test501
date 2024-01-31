@@ -1,0 +1,38 @@
+name: .NET Build and Publish
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: microsoft-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '6.0.26'
+
+    - name: Sleep
+      run: sleep 5s
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+
+    - name: Publish
+      run: dotnet publish --configuration Release --no-restore --output ./published
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: published
+        path: ./published
