@@ -2,10 +2,17 @@ name: .NET Setup
 on: [push]
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest
+
     steps:
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: latest
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0'
+
+      - name: Build project
+        run: dotnet build MyProject.csproj
