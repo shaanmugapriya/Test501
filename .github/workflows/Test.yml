@@ -29,4 +29,3 @@ jobs:
         with:
           dotnet-version: |
            3.0.x
-           4.0.x
