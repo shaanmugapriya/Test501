@@ -6,10 +6,10 @@ on:
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Setup dotnet
         uses: actions/setup-dotnet@v4
@@ -17,3 +17,16 @@ jobs:
           dotnet-version: |
            6.0.x
            8.0.x
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+           1.0.x
+           2.0.x
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+           3.0.x
+           4.0.x
