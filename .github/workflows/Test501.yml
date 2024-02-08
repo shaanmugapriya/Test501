@@ -1,0 +1,25 @@
+name: .NET Core
+
+on:
+ workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set .NET SDK version
+      run: |
+        echo '{
+          "sdk": {
+            "version": "2.1.818"
+          }
+        }' > global.json
+
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+
+    - name: Test with dotnet
+      run: dotnet test
