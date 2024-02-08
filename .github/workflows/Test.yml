@@ -14,18 +14,4 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: |
-           6.0.x
-           8.0.x
-
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: |
-           1.0.x
-           2.0.x
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: |
-           3.0.x
+          dotnet-version: 8.0.101
