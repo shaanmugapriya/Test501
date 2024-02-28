@@ -1,5 +1,5 @@
 name: .NET Setup
-on: [push]
+on: workflow_dispatch:
 
 jobs:
   setup:
