@@ -1,0 +1,11 @@
+name: .NET Setup
+on: [push]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup .NET
+      uses: shaanmugapriya/setup-dotnet@Feature/AddLatest
+      with:
+        dotnet-version: latest
